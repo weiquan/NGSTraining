@@ -57,7 +57,8 @@ class FMIdx():
 			l = self.count[c] + self.occ[l][c]
 			r = self.count[c] + self.occ[r][c]
 			i += 1
-		return i-1
+		if r-l>=2: return i
+		else :return i-1
 	def printIdx(self):
 		for i in xrange(len(self.bwt)):
 			print self.bwt[i], self.occ[i], self.sa[i]
@@ -171,7 +172,7 @@ def main():
 		#print l, seq1[i:]
 	fp.close()
 if __name__ == '__main__':
-	main()
-	#test_bw_search()
-	#test_fw_search()
-	#test_repeat_max_len()
+	#main()
+	test_bw_search()
+	test_fw_search()
+	test_repeat_max_len()
